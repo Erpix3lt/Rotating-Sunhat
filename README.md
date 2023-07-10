@@ -4,6 +4,28 @@
 
 The Sunshade Cap is an Arduino-based project that incorporates a rotating brim to keep the sun's rays away from the wearer's face. It utilizes a light sensor and a servo motor to automatically adjust the position of the brim based on the intensity of sunlight. This project combines practical functionality with an Arduino microcontroller to create a smart sunshade solution.
 
+## Logic
+
+The Sunshade Cap operates based on a simple yet effective logic that allows it to search for the highest light input using a servo motor and a light sensor. The logic works as follows:
+
+1. The light sensor measures the intensity of sunlight and provides an analog voltage output.
+
+2. The Arduino reads the analog voltage from the light sensor using the analog-to-digital converter (ADC).
+
+3. The Arduino compares the current light input with the previous light value stored in memory.
+
+4. If the current light input is higher than the previous light value, it means the sun's intensity has increased.
+
+5. In response to the increased light input, the Arduino commands the servo motor to rotate in the direction that brings the brim closer to the sun.
+
+6. The servo motor gradually moves the brim in the direction of the highest light input until the light intensity starts to decrease.
+
+7. Once the light intensity decreases or remains stable, the Arduino stops the servo motor from moving the brim further in that direction.
+
+8. If the light intensity starts to decrease, the Arduino changes the servo motor's rotation direction to move the brim in the opposite direction, searching for the highest light input.
+
+9. The servo motor continues to adjust the brim's position based on the light sensor readings, ensuring that the wearer's face remains shaded from the sun's rays.
+
 ## Features
 
 - Automatic sunshade adjustment using a light sensor
